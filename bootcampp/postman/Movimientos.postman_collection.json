@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "a338c59a-4bec-4732-a8d5-e0b1dfbf0b46",
+		"name": "Movimientos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9191/movimientos/creditos/update/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6196a9114ef5673d85506de9\",\r\n    \"idProducto\": {\r\n        \"id\": \"61967a2aed07633f6985771c\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/creditos/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"creditos",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/creditos/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idProducto\": {\r\n        \"id\": \"619c24b04de02875899da004\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/creditos/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"creditos",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/servicios/tarjetasCredito/delete/619c01a70a025a14b067c423",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/servicios/tarjetasCredito/delete/619c01a70a025a14b067c423",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"delete",
+						"619c01a70a025a14b067c423"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/619c614d77de222d021abf20",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/movimientos/619c614d77de222d021abf20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"619c614d77de222d021abf20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/cuentasBancarias/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idProducto\": {\r\n        \"id\": \"619c26e44de02875899da006\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/cuentasBancarias/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"cuentasBancarias",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/tarjetasCredito/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idProducto\": {\r\n        \"id\": \"619bf7d4e9401c65340ab9a9\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/tarjetasCredito/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"tarjetasCredito",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/cuentasBancarias/update/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6196a9114ef5673d85506de9\",\r\n    \"idProducto\": {\r\n        \"id\": \"619c26b34de02875899da005\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/cuentasBancarias/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"cuentasBancarias",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/movimientos/tarjetasCredito/update/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"619c622377de222d021abf24\",\r\n    \"idProducto\": {\r\n        \"id\": \"619c286e4de02875899da008\"\r\n    },\r\n    \"monto\": 50.0,\r\n    \"fechaRegistro\": \"2021-11-18T00:00:00.000+00:00\",\r\n    \"tipoMov\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/movimientos/tarjetasCredito/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"movimientos",
+						"tarjetasCredito",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

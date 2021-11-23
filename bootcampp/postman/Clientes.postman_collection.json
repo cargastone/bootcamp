@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "c234eb47-d5fa-4641-bebf-22739c86df06",
+		"name": "Clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9292/clientes/delete/619bef055355bc4e6599edd1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/clientes/delete/619bef055355bc4e6599edd1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"clientes",
+						"delete",
+						"619bef055355bc4e6599edd1"
+					]
+				},
+				"description": "Request usado para eliminar"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9292/clientes/update/619bea075355bc4e6599edcd",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"619bea6e5355bc4e6599edce\",\r\n    \"nroDoc\": \"1044789657\",\r\n    \"tipoDoc\": \"ruc\",\r\n    \"nombres\": \"juan\",\r\n    \"apellidos\": \"sarmiento\",\r\n    \"celular\": 9851647,\r\n    \"razonSocial\": \"VENTA_ENRRIQUE SAC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/clientes/update/619bea075355bc4e6599edcd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"clientes",
+						"update",
+						"619bea075355bc4e6599edcd"
+					]
+				},
+				"description": "Request actualiza datos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9292/clientes/619c255fbd5c2f4d25fd415c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/clientes/619c255fbd5c2f4d25fd415c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"clientes",
+						"619c255fbd5c2f4d25fd415c"
+					]
+				},
+				"description": "Request  listar por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9292/clientes/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n       \r\n        \"nroDoc\":\"12303651970\",\r\n        \"tipoDoc\":\"ruc\",\r\n        \"nombres\":\"marta\",\r\n        \"apellidos\":\"espinoza\",\r\n        \"celular\":\"954871364\",\r\n        \"razonSocial\":\"VENTA_ESPINOZA SAC\"\r\n\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/clientes/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"clientes",
+						"create"
+					]
+				},
+				"description": "Request crear datos Post"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9292/clientes/listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/clientes/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"clientes",
+						"listar"
+					]
+				},
+				"description": "Request listar"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "f8335673-662e-4456-9e26-9ad524736a6a",
+		"name": "TarjetaCredito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9393/servicios/tarjetasCredito/update/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"619572c5d4e18f4ab90f2795\",\r\n    \"limiteCredito\": 490.0,\r\n    \"fechaapertura\": \"2021-05-20T00:00:00.000+00:00\",\r\n    \"cliente\":{\"id\":\"619bdfecbd5c2f4d25fd415a\"},\r\n    \"fechaPago\": \"2021-06-20T00:00:00.000+00:00\",\r\n    \"firmante\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9393/servicios/tarjetasCredito/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/servicios/tarjetasCredito/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limiteCredito\": 4990.0,\r\n    \"fechaapertura\": \"2021-05-20T00:00:00.000+00:00\",\r\n    \"cliente\":{\"id\":\"619bdfecbd5c2f4d25fd415a\"},\r\n    \"fechaPago\": \"2021-06-20T00:00:00.000+00:00\",\r\n    \"firmante\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9393/servicios/tarjetasCredito/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/servicios/tarjetasCredito/listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9393/servicios/tarjetasCredito/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/servicios/tarjetasCredito/delete/619c01a70a025a14b067c423",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9393/servicios/tarjetasCredito/delete/619c01a70a025a14b067c423",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"delete",
+						"619c01a70a025a14b067c423"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9393/servicios/tarjetasCredito/619572c5d4e18f4ab90f2795",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9393/servicios/tarjetasCredito/619572c5d4e18f4ab90f2795",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9393",
+					"path": [
+						"servicios",
+						"tarjetasCredito",
+						"619572c5d4e18f4ab90f2795"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
