@@ -3,7 +3,6 @@ package com.nttdata.profileservice.application.impl;
 import com.nttdata.profileservice.application.model.ProfileRepository;
 import com.nttdata.profileservice.application.operations.ProfileOperations;
 import com.nttdata.profileservice.domain.Profile;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
