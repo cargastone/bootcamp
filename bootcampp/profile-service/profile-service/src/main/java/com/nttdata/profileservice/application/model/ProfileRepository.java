@@ -5,6 +5,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface ProfileRepository {
+
     public Flux<Profile> findAll();
 
     public Mono<Profile> findById(String id);

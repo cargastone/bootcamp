@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "profiles")
 public class ProfileDAO {
     @Id
-    private Long id;
+    private String id;
     private String typeProfile;
     private String montoMIn;
 }

@@ -4,10 +4,17 @@ import com.nttdata.profileservice.application.model.ProfileRepository;
 import com.nttdata.profileservice.domain.Profile;
 import com.nttdata.profileservice.infrastructure.model.dao.ProfileDAO;
 import com.nttdata.profileservice.infrastructure.rest.repositories.ProfileCrudRepository;
+import io.netty.handler.codec.http.HttpResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.function.Function;
 
 public class ProfileCrudService implements ProfileRepository {
 
@@ -33,12 +40,14 @@ public class ProfileCrudService implements ProfileRepository {
     @Override
     public Mono<Profile> update(String id, Profile profile) {
         return profileCrudRepository.findById(id)
-                .switchIfEmpty(Mono.error(new IllegalArgumentException("Profile not exist")))
+                .switchIfEmpty(Mono.error(new IllegalArgumentException("Error: El perfil no existe.") {
+                }))
                 .flatMap(profileDAO -> {
                     profileDAO = toProfileDAO(profile);
                     return profileCrudRepository.save(profileDAO)
                             .map(this::toProfile);
                 });
+
     }
 
     @Override
