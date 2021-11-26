@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "bc8be76d-ffc9-4f84-a9a4-be80d1e9e38d",
+		"name": "Transfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9494/transferencia/delete/61a0ae3b3374451808b6ce62",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9494/transferencia/delete/61a0ae3b3374451808b6ce62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9494",
+					"path": [
+						"transferencia",
+						"delete",
+						"61a0ae3b3374451808b6ce62"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9494/transferencia/update/61a0ae0e3374451808b6ce61",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"61a0ae0e3374451808b6ce61\",\r\n    \"tipo\": \"interno\",\r\n    \"id_cta_origen\": \"4551038245872597\",\r\n    \"id_cta_destino\": \"8347958742154796\",\r\n    \"monto\": 800.0,\r\n    \"fecha\": \"2021-11-27\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9494/transferencia/update/61a0ae0e3374451808b6ce61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9494",
+					"path": [
+						"transferencia",
+						"update",
+						"61a0ae0e3374451808b6ce61"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9494/transferencia/61a0ae0e3374451808b6ce61",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9494/transferencia/61a0ae0e3374451808b6ce61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9494",
+					"path": [
+						"transferencia",
+						"61a0ae0e3374451808b6ce61"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9494/transferencia/listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9494/transferencia/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9494",
+					"path": [
+						"transferencia",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9494/transferencia/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \r\n        \"tipo\":\"interno\",\r\n        \"id_cta_origen\":\"4551038245872597\",\r\n        \"id_cta_destino\":\"8347958742154796\",\r\n        \"monto\":\"700\",\r\n        \"fecha\":\"2021-11-12\"\r\n\r\n  }\r\n\r\n     ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9494/transferencia/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9494",
+					"path": [
+						"transferencia",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
