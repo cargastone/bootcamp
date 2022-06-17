@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +18,8 @@ public class Movimientos {
     private String id;
     private ProductoDto idProducto;
     private double monto;
-    private Date fechaRegistro;
+    private LocalDate fechaRegistro;
     private int tipoMov; //tipo:1(salida) tipo:2(entrada)
+
+    private int movCuantity; //Contador de movimientos
 }

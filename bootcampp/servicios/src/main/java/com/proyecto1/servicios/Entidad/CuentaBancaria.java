@@ -20,6 +20,9 @@ public class CuentaBancaria {
     private double saldo;
     private double mantenimiento;
     private long estado;
+    private double montoMinMes; //monto mínimo del mes
+    private int limitMaxMov; // límite maximo de movimientos
+    private int numMaxTrnsac; //Número maximo de transacciones
     private Date fechaApertura;
     private ClienteDto cliente;
 }

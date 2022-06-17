@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -13,6 +13,7 @@ public class MovimientosDto {
     private String id;
     private ProductoDto idProducto;
     private double monto;
-    private Date fechaRegistro;
+    private LocalDate fechaRegistro;
     private int tipoMov; //tipo:1(salida) tipo:2(entrada)
+    private int movCuantity; //Contador de movimientos
 }

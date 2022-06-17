@@ -1,10 +1,12 @@
 package com.proyecto1.movimientos.service;
 
 import com.proyecto1.movimientos.Repository.MovimientosRepository;
+import com.proyecto1.movimientos.dto.CuentaBancariaDto;
 import com.proyecto1.movimientos.dto.MovimientosDto;
 import com.proyecto1.movimientos.dto.ProductoDto;
 import com.proyecto1.movimientos.entity.Movimientos;
 import com.proyecto1.movimientos.utils.AppUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+
+@Slf4j
 @Service
 public class MovimientosService {
     private final WebClient webClient;
@@ -22,6 +27,8 @@ public class MovimientosService {
     String uriCreditos = "http://localhost:9393/servicios/creditos/{id}";
     String uriTarjetasCredito = "http://localhost:9393/servicios/tarjetasCredito/{id}";
     String uriCuentaBancaria = "http://localhost:9393/servicios/cuentasBancarias/{id}";
+
+    String uriPerfilCliente = "http://localhost:8081/api/v1/profile/list/{id}";
 
     public MovimientosService(ReactiveResilience4JCircuitBreakerFactory circuitBreakerFactory) {
         this.webClient = WebClient.builder().baseUrl(this.uriCreditos).build();
@@ -88,10 +95,35 @@ public class MovimientosService {
         return repository.findById(id).map(AppUtils::entityToDto);
     }
 
-    public Mono<Movimientos> saveMovimiento(MovimientosDto movimientosDtoMono){
-        System.out.println("service method called ...");
+    public Mono<Movimientos> saveMovimiento(MovimientosDto movimientosDtoMono) {
+
+        //VALIDAR MOVIMIENTOS
+        //Cuenta ahorro: limite max. de movimientos.
+        //Cuneta Coriente: Sin limite de movimientos,
+
+        return webClient.get().uri(this.uriCuentaBancaria, movimientosDtoMono.getIdProducto())
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(CuentaBancariaDto.class)
+                .flatMap(cuentaBancariaDto -> {//Datos de la cuenta bancaria
+
+                    return repository.FindByIdProducto(movimientosDtoMono.getIdProducto().getId())//Mov. cta. bancaria
+                            .filter(movimientos -> movimientos.getFechaRegistro().equals(LocalDate.now())) //Filtro mov. por fecha diaria. yyy-MM-dd
+                            .collectList()
+                            .map(movimientosList -> {
+                                if (movimientosList.size() <= cuentaBancariaDto.getLimitMaxMov()) //Valida limite de transacciones
+                                    return repository.save(AppUtils.dtoToEntity(movimientosDtoMono)); //Realiza el movimiento
+
+                            });//CON ERROR
+                });
+
+
+
+        /*System.out.println("service method called ...");
         Movimientos movimientos = AppUtils.dtoToEntity(movimientosDtoMono);
-        return  repository.save(movimientos);
+        return  repository.save(movimientos);*/
+
+
     }
 
     public Mono<Movimientos> updateMovimiento(MovimientosDto movimientosDtoMono){
